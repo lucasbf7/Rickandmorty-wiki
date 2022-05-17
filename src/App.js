@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useQuery } from "@apollo/client";
+import INFO_EPISODE from "./querys/index";
+import "./App.css";
 
 function App() {
+  const { loading, error, data } = useQuery(INFO_EPISODE);
+
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
+
+  if (error) {
+    return <p>Aconteceu um erro...</p>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="parent">
+      {data.episodes.results.map((episode, characters) => (
+        <div className="card" key={episode.name}>
+          
+          <div className="container">
+            <h4>
+              <b>{episode.name}</b>
+            </h4>
+            <p>
+              <b>Número do episódio:</b> {episode.episode}
+            </p>
+            <p>
+              <b>Estreia:</b> {episode.air_date}
+            </p>
+            <p>
+              <b>Personagens:</b> {episode.characters.name}
+            </p>
+          </div>
+        </div>
+      ))}
+    </section>
   );
 }
 
