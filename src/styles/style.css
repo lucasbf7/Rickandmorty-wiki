@@ -22,6 +22,16 @@ code {
   text-shadow: -3px 0 yellow, 0 3px yellow, 3px 0 yellow, 0 -3px yellow;
 }
 
+.header h1 {
+  margin-top: 0;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.paginacao {
+  background-color: #fff;
+}
+
 .parent {
   display: flex;
   flex-wrap: wrap;
@@ -34,7 +44,6 @@ code {
   transition: 0.3s;
   width: 20%;
   background-color: #fff;
-  cursor: pointer;
 }
 
 .card:hover {
@@ -43,4 +52,9 @@ code {
 
 .container {
   padding: 2px 16px;
+}
+
+.pagenumber {
+  display: flex;
+  align-items: center;
 }

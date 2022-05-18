@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './App.css';
+import './styles/style.css';
 import App from './App';
-import Header from './Header';
+import Header from './pages/Header';
 import reportWebVitals from './reportWebVitals';
 import { ApolloProvider } from '@apollo/client';
 
