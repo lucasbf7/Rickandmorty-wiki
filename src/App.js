@@ -28,9 +28,6 @@ function App() {
               <p>
                 <b>Estreia:</b> {episode.air_date}
               </p>
-              <p>
-                <b>Personagens:</b> {episode.characters.name}
-              </p>
             </div>
           </div>
         ))}
